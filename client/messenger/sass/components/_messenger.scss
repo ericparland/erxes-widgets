@@ -9,6 +9,7 @@ $break-small: 415px;
   flex-direction: column;
   height: calc(100% - 90px);
   max-height: 620px;
+  max-width: $break-small;
   overflow: hidden;
   position: absolute;
   right: 8px;

@@ -40,6 +40,15 @@ export const toggleNotiferFull = (isVisible) => {
   }, '*');
 };
 
+export const togglePopup = (isVisible) => {
+  window.parent.postMessage({
+    fromErxes: true,
+    fromMessenger: true,
+    purpose: 'popup',
+    isVisible: !isVisible,
+  }, '*');
+};
+
 
 export const changeRoute = route => ({
   type: CHANGE_ROUTE,

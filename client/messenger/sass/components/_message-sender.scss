@@ -1,32 +1,32 @@
 .erxes-message-sender {
-  overflow: hidden;
-  font-size: 12px;
-  position: relative;
-  min-height: 60px;
   border-top: 1px solid lighten($grey, 10%);
+  font-size: 12px;
+  min-height: 60px;
+  position: relative;
 
   textarea.reply {
-    color: $text-color;
     border: 0;
     border-radius: 3px;
-    padding: 20px 25px;
+    box-sizing: border-box;
+    color: $text-color;
     font-size: 14px;
+    height: 100%;
+    left: 0;
+    padding: 20px 25px;
     width: 100%;
     max-width: 100%;
     outline: none;
     resize: none;
     padding-right: 40px;
     position: absolute;
-    left: 0;
     top: 0;
-    height: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+    @include prefix((
+      transition: box-shadow .3s ease-in-out
+    ), webkit moz ms o);
 
     &:focus {
       @include prefix((
-        box-shadow: none !important
+        box-shadow: 0 0 60px 0 rgba(0, 0, 0, .08)
       ), webkit moz ms o);
     }
   }
@@ -42,7 +42,7 @@
     height: 35px;
     margin: 0;
     cursor: pointer;
-    opacity: 0.7;
+    opacity: .7;
 
     &:hover {
       opacity: 1;

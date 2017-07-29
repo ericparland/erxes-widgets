@@ -8,7 +8,7 @@
 #erxes-messenger-iframe {
   position: absolute;
   bottom: 12px;
-  right: 12px;
+  right: 372px;
   border: none;
   z-index: 100000000;
 }
@@ -22,6 +22,10 @@
   width: 416px;
   height: calc(100% - 20px);
   max-height: 660px;
+}
+
+.erxes-popup-shown {
+  width: 100%;
 }
 
 .erxes-messenger-shown > iframe,

@@ -61,5 +61,9 @@ window.addEventListener('message', (event) => {
     if (data.purpose === 'notifierFull') {
       erxesContainer.className += ` erxes-notifier-${data.isVisible ? 'shown' : 'hidden'} fullMessage`;
     }
+
+    if (data.purpose === 'popup') {
+      erxesContainer.className += ` erxes-popup-${data.isVisible ? 'shown' : 'hidden'}`;
+    }
   }
 });

@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import classNames from 'classnames';
 import { Message } from '../containers';
+import { EngageMessage } from '../components';
 
 
 const propTypes = {
@@ -12,6 +13,13 @@ const propTypes = {
 };
 
 class MessagesList extends Component {
+  constructor(props) {
+    super(props);
+
+
+    this.renderMessage = this.renderMessage.bind(this);
+  }
+
   componentDidMount() {
     this.node.scrollTop = this.node.scrollHeight;
   }
@@ -69,11 +77,24 @@ class MessagesList extends Component {
     return null;
   }
 
+  renderMessage(message) {
+    if (message.engageData && (message.engageData.kind === 'post' || message.engageData.kind === 'note')) {
+      return (
+        <div key={message._id} className="erxes-spacial-message">
+          <EngageMessage engageData={message.engageData} />
+        </div>
+      );
+    }
+
+    return <Message key={message._id} {...message} />;
+  }
+
   render() {
     const { data, messages } = this.props;
     const bg = data.uiOptions && data.uiOptions.wallpaper;
     const messengerData = data.messengerData;
     const messagesClasses = classNames('erxes-messages-list', { [`bg-${bg}`]: bg });
+    console.log(messages);
     return (
       <ul
         className={messagesClasses}
@@ -81,9 +102,7 @@ class MessagesList extends Component {
       >
         {this.renderWelcomeMessage(messengerData)}
         {
-          messages.map(message =>
-            <Message key={message._id} {...message} />,
-          )
+          messages.map(message => this.renderMessage(message))
         }
         {this.renderAwayMessage(messengerData)}
         {this.renderEmailPrompt()}

@@ -28,41 +28,45 @@ $core-spacing: 20px;
     box-shadow: 0 5px 15px -3px rgba($black, .2);
     cursor: pointer;
   }
+}
 
-  .notification-body {
-    -webkit-box-orient: vertical;
-    color: $text-color;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-height: 22px;
-    margin-bottom: $core-spacing;
-    overflow: hidden;
-    padding: 0 $core-spacing;
-    word-wrap: break-word;
+.notification-body {
+  -webkit-box-orient: vertical;
+  color: $text-color;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-height: 22px;
+  margin-bottom: $core-spacing;
+  overflow: hidden;
+  padding: 0 $core-spacing;
+  word-wrap: break-word;
 
-    &.fullMessage {
-      display: block;
-      flex: 1;
-      margin-bottom: 0;
-      overflow: auto;
-      padding: 0 $core-spacing $core-spacing;
-    }
-
-    img {
-      max-width: 100%;
-    }
+  &.fullMessage {
+    display: block;
+    flex: 1;
+    margin-bottom: 0;
+    overflow: auto;
+    padding: 0 $core-spacing $core-spacing;
   }
 
-  .user-info {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 0;
-    padding: $core-spacing $core-spacing $core-spacing / 2;
-
-    .erxes-avatar {
-      margin-right: 10px;
-      position: initial;
-    }
+  img {
+    max-width: 100%;
   }
+}
+
+.user-info {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  padding: $core-spacing $core-spacing $core-spacing / 2;
+
+  .erxes-avatar {
+    margin-right: 10px;
+    position: initial;
+  }
+}
+
+.popup-handler {
+  cursor: pointer;
 }
